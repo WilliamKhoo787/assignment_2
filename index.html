@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+
+	
+<style type="text/css">
+	
+	#head
+{	
+	height: 4em;
+	background-color: blue;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#h2{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.body
+{ 
+	font-size: 5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.press
+{	
+	align-content: center;
+	text-align: center;
+	font-size: 0.2em;
+	width: 10em;
+	height: 4em;
+	border-radius: 30px;
+}
+
+.press:hover
+{
+	background: blue;
+	color: white;
+	width: 10.5em;
+	height: 4.5em;
+	transition: 0.5s;
+}
+
+@media screen and (max-width: 600px) {
+	#head{
+		height: 2em;
+		width: 100%;
+		text-align: center;
+
+
+	}
+
+
+</style>
+	
+	
+</head>
+	
+<body>
+	<h1 id="head">Welcome to Greeting Card Generator!</h1>
+	<h2 id="h2">Select the Type of Greeting Card:</h2>
+
+	<div class="body">
+		<a href="corporate.html"><button class="press" id="one">Corporate</button></a>
+		<a href="Formal.html" ><button class="press" id="two">Formal</button></a>
+		<a href="Informal.html"><button class="press" id="three">Informal</button></a>
+	</div>
+
+
+
+</body>
+</html>

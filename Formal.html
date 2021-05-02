@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Tangerine">
+	<title></title>
+	<script type="text/javascript">
+		
+		//INPUT (applying HTML)
+		//greeting,name,subject,quote,fromWhoCRF
+		//greetings input function
+		function greet(info)
+		{
+			var greetingCRD = document.getElementById("greetingCRD");
+			var name = document.getElementById("name");
+			if (info == 1)
+			{
+				greetingCRD.innerHTML= "Assalamualaikum " ;
+			}
+			else
+			{
+				if (info == 2)
+				{
+					greetingCRD.innerHTML= "Salam ";					
+				}
+				else
+				{
+					if (info == 3) 
+					{
+						greetingCRD.innerHTML= "Good Morning ";
+					}
+					else
+					{
+						if (info == 4) 
+						{
+							greetingCRD.innerHTML= "Good Day ";
+						}
+					}
+				}
+			}
+		}
+		function nameChange()
+		{
+			var name = document.getElementById("name");
+			var nameCRD = document.getElementById("nameCRD")
+			nameCRD.innerHTML = name.value;
+		}
+		function subjectChange()
+		{
+			var subject = document.getElementById("subject");
+			var subjectCRD = document.getElementById("subjectCRD")
+			subjectCRD.innerHTML = subject.value;
+		}function fromChange()
+		{
+			var from = document.getElementById("from");
+			var fromCRD = document.getElementById("fromCRD")
+			fromCRD.innerHTML = "From : " + from.value;
+		}function quoteChange()
+		{
+			var quote = document.getElementById("quote");
+			var quoteCRD = document.getElementById("quoteCRD")
+			quoteCRD.innerHTML = quote.value;
+		}
+		function titlea(change){
+			var name = document.getElementById("name");
+			if (change == 1) 
+			{
+				nameCRD.innerHTML = "Dr. " + name.value;
+			}
+			else
+			{
+				if (change == 2) 
+				{
+					nameCRD.innerHTML = "Mr. " + name.value ;
+				}
+				else
+				{
+					if (change == 3) 
+					{
+						nameCRD.innerHTML = "Ms. " + name.value;
+					}
+					else
+					{
+						if (change == 4) 
+						{
+							nameCRD.innerHTML = "Mrs. " + name.value;
+						}
+					}
+				}
+			}
+		}
+		function closing(change){
+			var from = document.getElementById("from");
+			if (change == 1) 
+			{
+				fromCRD.innerHTML = "Yours Truly: " + from.value;
+			}
+			else
+			{
+				if (change == 2) 
+				{
+					fromCRD.innerHTML = "Warm Regards:\n " + from.value;
+				}
+				else
+				{
+					if (change == 3) 
+					{
+						fromCRD.innerHTML = "Best Regards:\n " + from.value;
+					}
+					else
+					{
+						if (change == 4) 
+						{
+							fromCRD.innerHTML = "Yours Sincerely:\n " + from.value;
+						}
+						else{
+							if (change == 5)
+							{
+								fromCRD.innerHTML = "From:\n " + from.value;
+
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		
+		//CUSTOMIZATIONS
+		//fonChange function applied to all
+		function fontChange(info)
+		{
+			var greetingCRD = document.getElementById("greetingCRD");
+			var nameCRD = document.getElementById("nameCRD");
+			var subjectCRD = document.getElementById("subjectCRD")
+			var fromCRD = document.getElementById("fromCRD");
+			var quoteCRD = document.getElementById("quoteCRD")
+			if (info == 1)
+			{
+				greetingCRD.style.fontFamily="Sofia";
+				nameCRD.style.fontFamily="Sofia";
+				subjectCRD.style.fontFamily="Sofia";
+				fromCRD.style.fontFamily="Sofia";
+				quoteCRD.style.fontFamily="Sofia";
+			}
+			else
+			{
+				if (info == 2)
+				{
+					greetingCRD.style.fontFamily="Trirong";
+					nameCRD.style.fontFamily="Trirong";
+					subjectCRD.style.fontFamily="Trirong";
+					quoteCRD.style.fontFamily="Trirong";
+					fromCRD.style.fontFamily="Trirong";
+				}
+				else
+				{
+					if (info == 3) 
+					{
+						greetingCRD.style.fontFamily="Audiowide";
+						nameCRD.style.fontFamily="Audiowide";
+						subjectCRD.style.fontFamily="Audiowide";
+						quoteCRD.style.fontFamily="Audiowide";
+						fromCRD.style.fontFamily="Audiowide";
+					}
+					else
+					{
+						if (info == 4) 
+						{
+							greetingCRD.style.fontFamily="Tangerine";
+							nameCRD.style.fontFamily="Tangerine";
+							subjectCRD.style.fontFamily="Tangerine";
+							quoteCRD.style.fontFamily="Tangerine";
+							fromCRD.style.fontFamily="Tangerine";
+						}
+					}
+				}
+			}
+		}
+
+		//background Color to card
+		function bgcolor()
+		{
+			var card = document.getElementById("card");
+			var bgcolor = document.getElementById("bgcolor");
+			card.style.backgroundColor = bgcolor.value;
+		}
+		//border Color to card
+		function bordcolor()
+		{
+			var card = document.getElementById("card");
+			var bordcolor = document.getElementById("bordcolor");
+			card.style.borderColor = bordcolor.value;
+		}
+
+		//color text function
+		// function fontcolor() {
+		// 	var fontcolor = document.getElementById("fontcolor");
+
+		// 	var greetingCRD = document.getElementById("greetingCRD");
+		// 	var nameCRD = document.getElementById("nameCRD");
+		// 	var subjectCRD = document.getElementById("subjectCRD");
+		// 	var fromCRD = document.getElementById("fromCRD");
+		// 	var quoteCRD = document.getElementById("quoteCRD");
+		// 	greetingCRD.style.color = fontcolor.value;
+		// 	nameCRD.style.color= fontcolor.value;
+		// 	subjectCRD.style.color= fontcolor.value;
+		// 	fromCRD.style.color= fontcolor.value;
+		// 	quoteCRD.style.color= fontcolor.value;
+
+		// }
+		function greetingsColor(){ //greeting
+			var greetingsColor = document.getElementById("greetingsColor");
+			var greetingCRD = document.getElementById("greetingCRD");
+			greetingCRD.style.color = greetingsColor.value;
+
+		}function nameColor(){ //name 
+			var nameColor = document.getElementById("nameColor");
+			var nameCRD = document.getElementById("nameCRD");
+			nameCRD.style.color= nameColor.value;
+
+		}function subjectColor(){ //Subject 
+			var subjectColor = document.getElementById("subjectColor");
+			var subjectCRD = document.getElementById("subjectCRD");
+			subjectCRD.style.color= subjectColor.value;
+
+		}function fromColor(){ //from
+			var fromColor = document.getElementById("fromColor");
+			var fromCRD = document.getElementById("fromCRD");
+			fromCRD.style.color= fromColor.value;
+
+		}function quoteColor(){ //quote
+			var quoteColor = document.getElementById("quoteColor");
+			var quoteCRD = document.getElementById("quoteCRD");
+			quoteCRD.style.color= quoteColor.value;
+		}
+		
+		//Drag and Drop Function
+		function dragstart_handler(ev) {
+			ev.dataTransfer.setData("text", ev.target.id);
+		}
+		function dragover_handler(ev) {
+			ev.preventDefault();
+		}
+		function drop_handler(ev) {
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("text");
+			var x = ev.clientX;
+			var y = ev.clientY;
+			var a;
+			a = a + 1;
+			ev.target.appendChild(document.getElementById(data).cloneNode(true)).id = 'dropped1' + a;
+		}
+
+		
+		function save()	
+		{
+			var name = document.getElementById("name");
+			var subject = document.getElementById("subject");
+			var from = document.getElementById("from");
+			var quote = document.getElementById("quote");
+			localStorage.setItem("name", name.value);
+			localStorage.setItem("subject", subject.value);
+			localStorage.setItem("from", from.value);
+			localStorage.setItem("quote", quote.value);
+
+			// var greetingCRD = document.getElementById("greetingCRD");
+			// var nameCRD = document.getElementById("nameCRD");
+			// var subjectCRD = document.getElementById("subjectCRD");
+			// var fromCRD = document.getElementById("fromCRD");
+			// var quoteCRD = document.getElementById("quoteCRD");
+			// localStorage.setItem("greetingCRD", greetingCRD.value);	
+			// localStorage.setItem("nameCRD", nameCRD.value);			
+			// localStorage.setItem("subjectCRD", subjectCRD.value);
+			// localStorage.setItem("fromCRD", fromCRD.value);
+			// localStorage.setItem("quoteCRD", quoteCRD.value);
+
+			var bgcolor = document.getElementById("bgcolor");
+			localStorage.setItem("bgcolor", bgcolor.value);
+
+			var bordcolor = document.getElementById("bordcolor");
+			localStorage.setItem("bordcolor", bordcolor.value);
+
+
+			// var fontcolor = document.getElementById("fontcolor");
+			// localStorage.setItem("fontcolor", fontcolor.value);
+
+			var greetingsColor=document.getElementById("greetingsColor");
+			localStorage.setItem("greetingsColor", greetingsColor.value);
+			var nameColor=document.getElementById("nameColor");
+			localStorage.setItem("nameColor", nameColor.value);
+			var subjectColor=document.getElementById("subjectColor");
+			localStorage.setItem("subjectColor", subjectColor.value);
+			var fromColor=document.getElementById("fromColor");
+			localStorage.setItem("fromColor", fromColor.value);
+			var quoteColor=document.getElementById("quoteColor");
+			localStorage.setItem("quoteColor", quoteColor.value);
+
+		}
+
+		function load()
+		{
+			//retriving from userInput
+
+			// var name = document.getElementById("name");
+			// var subject = document.getElementById("subject");
+			// var fromUser = document.getElementById("from");
+			// var quote = document.getElementById("quote");
+			
+			// name.value = localStorage.getItem("name");
+			// subject.value = localStorage.getItem("subject");
+			// fromUser.value = localStorage.getItem("from");
+			// quote.value = localStorage.getItem("quote")
+			
+			greetingCRD.innerHTML = localStorage.getItem("greetin");
+			nameCRD.innerHTML = localStorage.getItem("name");
+			subjectCRD.innerHTML = localStorage.getItem("subject");
+			fromCRD.innerHTML = localStorage.getItem("from");
+			quoteCRD.innerHTML = localStorage.getItem("quote");
+
+			card.style.backgroundColor = localStorage.getItem("bgcolor");
+			card.style.borderColor = localStorage.getItem("bordcolor");
+
+			greetingCRD.style.color = localStorage.getItem("greetingsColor");
+			nameCRD.style.color = localStorage.getItem("nameColor");
+			subjectCRD.style.color = localStorage.getItem("subjectColor");
+			fromCRD.style.color = localStorage.getItem("fromColor");
+			quoteCRD.style.color = localStorage.getItem("quoteColor");
+		}
+		function widthChange()
+		{
+
+			var widthi = document.getElementById("widthi");
+			var card = document.getElementById("card");
+			card.style.width = widthi.value * 96 + "px";
+		}
+		function heightChange()
+		{
+			var heighti = document.getElementById("heighti");
+			var card = document.getElementById("card");
+			card.style.height = heighti.value * 96 + "px";	
+		}
+	</script>
+	<style type="text/css">
+
+		body
+		{
+			overflow-x: hidden;
+			margin: 0px;
+			background-color: #1559ed;
+			display: grid;
+			grid-template-columns: 20vw 80vw;
+			grid-template-rows: 10vh auto ;
+			grid-template-areas:
+			"header header" 
+			"nav1 card";
+		}
+		
+		header{
+			color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-area: header;
+      background-color: #1559ed;
+			
+		}
+		.size1
+		{
+			width: 30px;
+		}
+		
+
+		#nav1{
+			overflow: hidden;
+			align-items: center;
+			grid-area: nav1;
+			background-color: silver;
+		    padding: 12px 12px 12px 12px;
+
+		}
+		#nav1 *{
+			margin: 5px;
+		}
+		#nav1 img{
+			position: relative;
+			border: 0.5px solid black;
+			padding: 10px;
+			width: 134px;
+			height: 96px;
+		}
+		#contentCard{
+			display: flex;
+			justify-content: center;            
+			align-items: center;
+			background-color: white;
+			grid-area: card;
+	      padding: 50px 50px 50px 50px
+
+		}
+		#card{
+			display: flex;
+			position: relative;
+			overflow: hidden;
+			width: 900px;
+			height: 600px;
+			border: 1px solid black;
+			border-radius: 10px;
+			background-color: silver;
+			border: inset 2em gray;
+		}
+		#card img{
+			flex-grow: 1; 
+		}
+		.out
+		{
+			font-size: 2em;
+		}
+		#greetingCRD,#nameCRD,#subjectCRD,#fromCRD,#quoteCRD{
+			position: absolute;
+		}
+		#greetingCRD, #nameCRD, #subjectCRD,#quoteCRD{
+			right: 50%;
+			transform: translate(+50%, 0);
+
+		}
+		#greetingCRD
+		{
+
+			text-align: center;
+			font-size: 2em;
+		}
+		#nameCRD{
+			top: 10%;
+			text-align: center;
+			font-size: 2em;
+		}
+		#subjectCRD
+		{
+			top: 25%;
+			text-align: center;
+			font-weight: bold;
+			font-size: 3em;
+		}
+		
+		#fromCRD 
+		{
+			top: 90%;
+			font-weight: bold;
+			font-size: 1em;
+		}
+		#quoteCRD
+		{
+			align-self: center;
+			text-align: center;
+			font-size: 2em;
+			word-spacing: 10px;
+		}
+
+		/*.fav
+		{
+			width: 8em;
+			height: 2em;
+			margin-right: 50px;
+			margin-left: 32px;
+		}*/
+		button {
+      align-content: center;
+      text-align: center;
+      width: 50%;
+      height: 4em;
+      border-radius: 30px;
+      background-color: white;
+    }
+
+    button:hover {
+      background: blue;
+      color: white;
+      height: 4.5em;
+      transition: 0.5s;
+    }
+
+    #home{
+      width: 100%;
+    }
+    @media screen and (max-width: 600px) {
+				body{
+					grid-template-columns: 100vw;
+					grid-template-rows: : 10vh auto auto;
+					grid-template-areas:
+					"header" 
+					"nav1"
+					"card";
+				}
+			}
+	</style>
+	
+</head>
+<body>
+	<header>
+		<div>
+			<div style="font-size: 2em"> You are Creating a Formal Card</div>
+
+		</div>
+	</header>
+	<nav id="nav1" >
+
+		<!-- input greeting -->
+		<label>Greeting</label>
+		<select onchange="greet(this.value)">
+			<option value="0">No Greeting</option>
+			<option value="1">Assalamualaikum</option>
+			<option value="2">Salam</option>
+			<option value="3">Good Morning</option>
+			<option value="4">Good Day</option>
+		</select>
+		<br>
+
+		<!-- input font color for greeting -->
+		<div>Font Color (Greetings): </div>
+		<input type="Color" name="greetingsColor" onchange="greetingsColor()" id="greetingsColor">	
+		<br>
+		<br>
+
+		<!-- input name -->
+		<label class="one">Name</label>
+		<input type="text" name="name" id="name" onchange="nameChange()"> 
+		<!-- input font coloer for text -->
+		<div>Font Color (name): </div>
+		<input type="Color" name="nameColor" onchange="nameColor()" id="nameColor">
+		<br>
+		<br>
+
+		<!-- salutaions -->
+		<label>Titles</label>
+		<select onchange="titlea(this.value)" >
+			<option value="0">No Title</option>
+			<option value="1">Dr. </option>
+			<option value="2">Mr. </option>
+			<option value="3">Ms. </option>
+			<option value="4">Mrs. </option>
+		</select>
+		<br>
+
+
+		<label class="one"> Subject</label>
+		<input type="text" name="subject" id="subject" onchange="subjectChange()">
+		<div>Font Color (subject): </div>
+		<input type="Color" name="subjectColor" onchange="subjectColor()" id="subjectColor">
+		<br>
+		<br>
+
+		<label>Closing</label>
+		<select onchange="closing(this.value)">
+			<option value="0">No Closing</option>
+			<option value="1">Yours Truly</option>
+			<option value="2">Warm Regards</option>
+			<option value="3">Best Regards</option>
+			<option value="4">Yours Sincerely</option>
+			<option value="5">From</option>
+		</select>
+		<br>
+
+		<label class="one">Your name</label>
+		<input type="text" name="fromUser" id="from" onchange="fromChange()">
+		<div>Font Color (From):</div>
+		<input type="Color" name="fromColor" onchange="fromColor()" id="fromColor">
+		<br>
+		<br>
+
+		<label class="one">Quotes</label>
+		<input type="text" name="fromUser" id="quote" onchange="quoteChange()">
+		<div>Font Color (Quotes):</div>
+		<input type="Color" name="quoteColor" onchange="quoteColor()" id="quoteColor">
+		<br>
+		<br>
+
+		<label>Font Style</label>
+		<select onchange="fontChange(this.value)">
+			<option value="0">Default font</option>
+			<option value="1">Sofia</option>
+			<option value="2">Trirong</option>
+			<option value="3">Audiowide</option>
+			<option value="4">Tangerine</option>
+		</select>
+		<br>
+
+		<<div>Card size <br>
+			<input type="number" name="width" placeholder="Width (in)" id="widthi" min="1" onchange="widthChange()">
+			<input type="number" name="height" placeholder="Height(in)" id="heighti" min="1" onchange="heightChange()">
+		</div>
+		<label>Background Color</label>
+		<input type="Color" name="bgcolor" onchange="bgcolor()" id="bgcolor">
+		<br>
+		<label>Border Color</label>
+		<input type="Color" name="bordcolor" onchange="bordcolor()" id="bordcolor">
+		<br>
+		<div id="templateid">
+				<img src="assets/3.jpg"  ondragstart="dragstart_handler(event);" draggable="true" class="images" id="img1">
+				<img src="assets/4.jpeg"  ondragstart="dragstart_handler(event);" draggable="true" class="images" id="img2">
+		</div>
+		<button onclick="save()" class="fav">Save this</button>
+		<button onclick="load()" onclick="reload()" class="fav">Load save</button>
+		<a href="index.html"><button id="home">Select a different type of card</button></a>
+	</nav>
+	<div id="contentCard">
+		<div id="card" ondrop="drop_handler(event)" ondragover="dragover_handler(event);">
+			<div id="greetingCRD" class="out"></div>
+			<div id="nameCRD" class="out"></div>
+			<div id="subjectCRD" class="kname"></div>
+			<div id="quoteCRD" class="kname"></div>		
+			<div id="fromCRD" class="out"></div>
+		</div>
+	</div>
+</body>
+</html>
