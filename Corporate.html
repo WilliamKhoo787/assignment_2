@@ -327,6 +327,9 @@
 			localStorage.setItem("fromColor", fromColor.value);
 			var quoteColor=document.getElementById("quoteColor");
 			localStorage.setItem("quoteColor", quoteColor.value);
+			document.getElementById("saveo").style.padding="1em";
+			document.getElementById("saveo").style.borderRadius="1em";
+			saveo.innerHTML = "Card Saved";
 
 		}
 
@@ -377,7 +380,6 @@
 		{
 			overflow-x: hidden;
 			margin: 0px;
-			background-color: #1559ed;
 			display: grid;
 			grid-template-columns: 20vw 80vw;
 			grid-template-rows: 10vh auto ;
@@ -550,6 +552,28 @@
 					"card";
 				}
 			}
+			#card
+			{
+				animation: fade ease-out 1s;
+			}
+			@keyframes fade
+			{
+				from
+				{
+					opacity: 0%;
+				}
+				to
+				{
+					opacity: 100%;
+				}
+			}
+			#saveo
+			{
+				font-weight: bold;
+				background-color: green;
+				width: 5.5em;
+				color: white;
+			}
 		</style>
 	</head>
 	<body>
@@ -562,7 +586,7 @@
 		<nav id="nav1" >
 
 			<!-- input greeting -->
-			<label style="font-weight: bold;">Greeting</label>
+			<label style="font-weight: bold;" >Greeting</label>
 			<br>
 			<select onchange="greet(this.value)">
 				<option value="0">No Greeting</option>
@@ -590,7 +614,7 @@
 			<br>
 
 			<!-- salutaions -->
-			<label >Titles</label>
+			<label style="font-weight: bold;">Titles</label>
 			<select onchange="titlea(this.value)" >
 				<option value="0">No Title</option>
 				<option value="1">Dr. </option>
@@ -599,7 +623,7 @@
 				<option value="4">Mrs. </option>
 			</select>
 			<br>
-<br>
+			<br>
 
 			<label class="one" style="font-weight: bold;"> Subject</label>
 			<br>
@@ -610,10 +634,10 @@
 			<br>
 			<label class="one" style="font-weight: bold;">Notes</label>
 			<br>
+			<input type="text" name="fromUser" id="quote" onchange="quoteChange()">
+			<br>
 			<div>Font Color (Notes)</div>
 			<input type="Color" name="quoteColor" onchange="quoteColor()" id="quoteColor">
-			<br>
-			<input type="text" name="fromUser" id="quote" onchange="quoteChange()">
 			<br>
 			<label class="one" style="font-weight: bold;">Your name</label>
 			<br>
@@ -628,6 +652,7 @@
 			<input type="email" name="email" id="email" onchange="mail()">
 			<br>
 			<label style="font-weight: bold;">Phone Number</label>
+			<br>
 			<input type="tel" name="phone" id="phone" onchange="phone()">
 			<br>
 			<div>Font Color (Name/Company/Email/Phone):</div>
@@ -657,11 +682,12 @@
 		<label>Border Color</label>
 		<input type="Color" name="bordcolor" onchange="bordcolor()" id="bordcolor">
 		<br>
-		<div id="templateid">
+		<div id="templateid">Images (Drag and Drop)</div>
+		<div>
 			<img src="assets/5.jpg"  ondragstart="dragstart_handler(event);" draggable="true" class="images" id="img1">
 			<img src="assets/6.jpg"  ondragstart="dragstart_handler(event);" draggable="true" class="images" id="img2">
 		</div>
-		
+		<div id="saveo"></div>
 		<button onclick="save()" class="fav">Save this</button>
 		<button onclick="load()" onclick="reload()" class="fav">Load save</button>
 		
