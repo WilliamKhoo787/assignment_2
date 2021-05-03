@@ -294,6 +294,9 @@
 			localStorage.setItem("fromColor", fromColor.value);
 			var quoteColor=document.getElementById("quoteColor");
 			localStorage.setItem("quoteColor", quoteColor.value);
+			document.getElementById("saveo").style.padding="1em";
+			document.getElementById("saveo").style.borderRadius="1em";
+			saveo.innerHTML = "Card Saved";
 
 		}
 
@@ -463,33 +466,57 @@
       height: 4em;
       border-radius: 30px;
       background-color: white;
-    }
+    	}
 
-    button:hover {
-      background: blue;
-      color: white;
-      height: 4.5em;
-      transition: 0.5s;
-    }
+	    button:hover {
+	      background: blue;
+	      color: white;
+	      height: 4.5em;
+	      transition: 0.5s;
+	    }
 
-    #home{
-      width: 100%;
-    }
-    @media screen and (max-width: 600px) {
-				body{
-					grid-template-columns: 100%;
-					grid-auto-rows: : 20vh;
-					grid-template-areas:
-					"header" 
-					"nav1"
-					"card";
+	    #home{
+	      width: 100%;
+	    }
+	    @media screen and (max-width: 600px) {
+					body{
+						grid-template-columns: 100%;
+						grid-auto-rows: : 20vh;
+						grid-template-areas:
+						"header" 
+						"nav1"
+						"card";
+					}
+					#card{
+						grid-area: card;
+						overflow-x: visible;
+					}
 				}
-				#card{
-					grid-area: card;
-					overflow-x: visible;
+		.bold{
+			font-weight: bold
+		}
+		#card
+			{
+				animation: fade ease-out 1s;
+			}
+			@keyframes fade
+			{
+				from
+				{
+					opacity: 0%;
+				}
+				to
+				{
+					opacity: 100%;
 				}
 			}
-
+			#saveo
+			{
+				font-weight: bold;
+				background-color: green;
+				width: 5.5em;
+				color: white;
+			}
 	</style>
 		
 </head>
@@ -503,7 +530,7 @@
 	<nav id="nav1" >
 
 		<!-- input greeting -->
-		<label>Greeting</label>
+		<label class="bold">Greeting</label>
 		<select onchange="greet(this.value)">
 			<option value="0">No Greeting</option>
 			<option value="1">Assalamualaikum</option>
@@ -520,16 +547,16 @@
 		<br>
 
 		<!-- input name -->
-		<label class="one">Name</label>
+		<label class="bold">Name</label>
 		<input type="text" name="name" id="name" onchange="nameChange()"> 
 		<!-- input font coloer for text -->
 		<div>Font Color (name): </div>
 		<input type="Color" name="nameColor" onchange="nameColor()" id="nameColor">
 		<br>
-		<br>
+
 
 		<!-- salutaions -->
-		<label>Titles</label>
+		<label class="bold">Titles</label>
 		<select onchange="titlea(this.value)" >
 			<option value="0">No Title</option>
 			<option value="1">Dr. </option>
@@ -538,14 +565,14 @@
 			<option value="4">Mrs. </option>
 		</select>
 		<br>
+		<br>
 
-
-		<label class="one"> Heading</label>
+		<label class="bold"> Heading</label>
 		<input type="text" name="subject" id="subject" onchange="subjectChange()">
 		<div>Font Color (Heading): </div>
 		<input type="Color" name="subjectColor" onchange="subjectColor()" id="subjectColor">
 		<br>
-		<br>
+	
 
 		<label>Closing</label>
 		<select onchange="closing(this.value)">
@@ -557,22 +584,23 @@
 			<option value="5">From</option>
 		</select>
 		<br>
+		<br>
 
-		<label class="one">Your name</label>
+		<label class="bold">Your name</label>
 		<input type="text" name="fromUser" id="from" onchange="fromChange()">
 		<div>Font Color (From):</div>
 		<input type="Color" name="fromColor" onchange="fromColor()" id="fromColor">
 		<br>
 		<br>
 
-		<label class="one">Quotes</label>
+		<label class="bold">Quotes</label>
 		<input type="text" name="fromUser" id="quote" onchange="quoteChange()">
 		<div>Font Color (Quotes):</div>
 		<input type="Color" name="quoteColor" onchange="quoteColor()" id="quoteColor">
 		<br>
 		<br>
 
-		<label>Font Style</label>
+		<label class="bold">Font Style</label>
 		<select onchange="fontChange(this.value)">
 			<option value="0">Default font</option>
 			<option value="1">Sofia</option>
@@ -582,20 +610,22 @@
 		</select>
 		<br>
 
-		<div>Card size <br>
+		<div class="bold">Card size <br>
 			<input type="number" name="width" placeholder="Width (in)" id="widthi" min="1" onchange="widthChange()">
 			<input type="number" name="height" placeholder="Height(in)" id="heighti" min="1" onchange="heightChange()">
 		</div>
-		<label>Background Color</label>
+		<label class="bold">Background Color</label>
 		<input type="Color" name="bgcolor" onchange="bgcolor()" id="bgcolor">
 		<br>
-		<label>Border Color</label>
+		<label class="bold">Border Color</label>
 		<input type="Color" name="bordcolor" onchange="bordcolor()" id="bordcolor">
 		<br>
-		<div id="templateid">
-				<img src="assets/1.jpg"  ondragstart="dragstart_handler(event);" draggable="true" class="images" id="img1">
-				<img src="assets/2.jpg"  ondragstart="dragstart_handler(event);" draggable="true" class="images" id="img2">
+		<div id="templateid" class="bold">Images (Drag and Drop)</div>
+		<div>
+			<img src="assets/5.jpg"  ondragstart="dragstart_handler(event);" draggable="true" class="images" id="img1">
+			<img src="assets/6.jpg"  ondragstart="dragstart_handler(event);" draggable="true" class="images" id="img2">
 		</div>
+		<div id="saveo"></div>
 		<button onclick="save()" class="fav">Save this</button>
 		<button onclick="load()" onclick="reload()" class="fav">Load save</button>
 		<a href="index.html"><button id="home">Select a different type of card</button></a>
